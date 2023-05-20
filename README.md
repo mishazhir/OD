@@ -2,6 +2,7 @@
 Outlier Detection Paper
 В данном исследовательском проекте мы изучим и сравним различные способы поиска аномалий в табличных данных. Будем использовать следующие наборы данных:
 Number	|Data	|# Samples|	# Features	|# Anomaly|	% Anomaly|Category
+-----------|----------------|-----------------|------------------|||
 2|	annthyroid|	7200|	6	|534|	7.42|	Healthcare
 6	|cardio	|1831|	21|	176|	9.61|	Healthcare
 23	|mammography	|11183|	6	|260	|2.32|	Healthcare
