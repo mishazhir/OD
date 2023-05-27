@@ -39,6 +39,8 @@ class DataGenerator():
                                        if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
         self.dataset_list_clustered = [os.path.splitext(_)[0] for _ in os.listdir('datasets/Clustered')
                                        if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
+        self.dataset_list_final = [os.path.splitext(_)[0] for _ in os.listdir('datasets/Final')
+                                       if os.path.splitext(_)[1] == '.npz'] # classical AD datasets
         self.dataset_list_cv = ''
         self.dataset_list_nlp = ''
 
@@ -223,10 +225,12 @@ class DataGenerator():
         else:
             if self.dataset in self.dataset_list_classical:
                 data = np.load(os.path.join('datasets', 'Classical', self.dataset + '.npz'), allow_pickle=True)
-            if self.dataset in self.dataset_list_scaled:
+            elif self.dataset in self.dataset_list_scaled:
                 data = np.load(os.path.join('datasets', 'Scaled', self.dataset + '.npz'), allow_pickle=True)
-            if self.dataset in self.dataset_list_clustered:
+            elif self.dataset in self.dataset_list_clustered:
                 data = np.load(os.path.join('datasets', 'Clustered', self.dataset + '.npz'), allow_pickle=True)
+            elif self.dataset in self.dataset_list_final:
+                data = np.load(os.path.join('datasets', 'Final', self.dataset + '.npz'), allow_pickle=True)
             elif self.dataset in self.dataset_list_cv:
                 data = np.load(os.path.join('datasets', 'CV_by_ResNet18', self.dataset + '.npz'), allow_pickle=True)
             elif self.dataset in self.dataset_list_nlp:
